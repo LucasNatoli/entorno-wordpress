@@ -23,10 +23,10 @@ Desde la consola de la VM corremos:
 user@computer:~$ apt install nginx
 ```
 
-Luego instalamos php7.4 y los modulos que necesita wordpress para funcionar correctamente:
+Luego instalamos la ultima version disponible de php y los módulos que necesita wordpress para funcionar correctamente:
 
 ```bash 
-user@computer:~$ apt install php7.4 php7.4-fpm php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip php-json php-mysql
+user@computer:~$ sudo apt install php-fpm php-mysql php-gd php-mbstring php-xml php-json php-curl php-zip php-soap php-intl
 ````
 
 ## 4 - Instalar el motor de base de datos en el SO
@@ -37,17 +37,14 @@ Usamos Mysql
 Desde la consola de la VM corremos:
 
 ```bash
-user@computer:~$ apt install mysql-server mysql-client
+user@computer:~$ apt install mysql-server
 ```
-
-Se instalan las versiones (cliente y servidor ya que el servidor no provee acceso a sus funciones sino a través del cliente)
 
 Acceso cliente mysql:
 
 ```bash
-user@computer:~$ sudo mysql -u root
+user@computer:~$ sudo mysql
 ```
-
 
 ### Crear el entorno de datos de Wordpress
 
@@ -60,7 +57,6 @@ CREATE USER ‘wordpress’@‘localhost’ identifica by ‘password_123’; /*
 
 grant all privileges on wordpress.* to ‘wordpress’@‘localhost’; /* Le damos permiso total sobre la base de datos ‘wordpress’ al usuario ‘wordpress’ */
 ````
-
 
 
 
